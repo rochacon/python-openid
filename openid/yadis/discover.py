@@ -127,7 +127,7 @@ def whereIsYadis(resp):
             # have a whitelist or a blacklist (for detecting that it's
             # HTML)?
             try:
-                yadis_loc = findHTMLMeta(StringIO(resp.body))
+                yadis_loc = findHTMLMeta(StringIO(resp.body.decode('utf-8')))
             except MetaNotFound:
                 pass
 
